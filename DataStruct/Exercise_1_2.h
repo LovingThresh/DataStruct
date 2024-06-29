@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
-static void swap(int& a, int& b) noexcept;
+
+static constexpr size_t no_mismatch = std::string::npos;
 
 inline void swap(int& a, int& b) noexcept
 {
@@ -42,7 +43,7 @@ Tr inner_product(const std::vector<Ta>& a, const std::vector<Tb>& b, Tr& result 
 template <typename T>
 std::vector<T> iota(std::vector<T>& a, const T value)
 {
-    for (size_t element = 0; element < a.size(); element++)
+    for (size_t element = 0; element < a.size(); ++element)
     {
         if (static_cast<T>(std::numeric_limits<T>::max() - element) < value)
         {
@@ -52,5 +53,40 @@ std::vector<T> iota(std::vector<T>& a, const T value)
     }
 
     return a;
+}
+
+template <typename T>
+bool is_sorted(const std::vector<T>& a)
+{
+    for (size_t i = 0; i < a.size() - 1; ++i)
+    {
+        if (a[i] > a[i + 1])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+template <typename T>
+size_t mismatch(const std::vector<T>& a, const std::vector<T>& b)
+{
+    for (size_t i = 0; i < std::min(a.size(), b.size()); ++i)
+    {
+        if (a[i] != b[i])
+        {
+            return i;
+        }
+    }
+
+    if (a.size() != b.size())
+    {
+        return std::min(a.size(), b.size());
+    }
+    else
+    {
+        return no_mismatch;
+    }
 }
 

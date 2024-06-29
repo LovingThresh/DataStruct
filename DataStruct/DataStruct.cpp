@@ -80,11 +80,36 @@ namespace test
             // 如果没有抛出异常，则说明测试失败
             std::cerr << "Test case 2 failed: No overflow error thrown." << '\n';
         }
-        catch (const std::overflow_error& e) {
+        catch (const std::overflow_error&) {
             // 验证是否捕获到了正确的异常类型
-            std::cout << e.what() << '\n';
             std::cout << "Test case 2 passed: Overflow error caught as expected." << '\n';
         }
+
+    }
+
+    void test_mismatch_normal_case()
+    {
+        // equal
+        std::vector<int> vec1 { 1, 2, 3, 4, 5 };
+        std::vector<int> vec2 { 1, 2, 3, 4, 5 };
+
+        const auto result1 = mismatch(vec1, vec2);
+        assert(result1 == no_mismatch);
+        std::cout << "Test case passed: equal case." << '\n';
+
+        // subsequence
+        vec1 = { 1, 2, 3, 4};
+        const auto result2 = mismatch(vec1, vec2);
+        assert(result2 == 4);
+        std::cout << "Test case passed: subsequence case." << '\n';
+
+        // mismatch
+        vec2 = { 1, 2, 4, 4, 5 };
+        const auto result3 = mismatch(vec1, vec2);
+        assert(result3 == 2);
+
+        std::cout << "Test case passed: Normal case." << '\n';
+
     }
 
 }
@@ -94,23 +119,33 @@ int main()
 {
     test::test_case_1();
     std::cout << "test case 1 passed!" << '\n';
+    std::cout << "---------------------------" << '\n';
 
     test::test_case_2();
     std::cout << "test case 2 passed!" << '\n';
 
+    std::cout << "---------------------------" << '\n';
     test::test_case_3();
     std::cout << "test case 3 passed!" << '\n';
 
+    std::cout << "---------------------------" << '\n';
     test::test_case_4_int();
     std::cout << "test case 4-int passed!" << '\n';
 
+    std::cout << "---------------------------" << '\n';
     test::test_case_4_float();
     std::cout << "test case 4-float passed!" << '\n';
 
+    std::cout << "---------------------------" << '\n';
     test::test_iota_normal_case();
     std::cout << "test iota normal case passed!" << '\n';
 
+    std::cout << "---------------------------" << '\n';
     test::test_iota_overflow_case();
+
+    std::cout << "---------------------------" << '\n';
+    test::test_mismatch_normal_case();
+    std::cout << "All test mismatch case passed!" << '\n';
 
     return 0;
 }
