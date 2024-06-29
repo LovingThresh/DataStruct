@@ -1,11 +1,12 @@
 ﻿#include <cassert>
 #include <iostream>
-
+#include <cstring>
 #include "Exercise_1_2.h"
+#include "Exercise_1_3.h"
 
 constexpr float epsilon = 1e-6f;
 
-namespace test
+namespace test_1_2
 {
     void test_case_1()
     {
@@ -20,6 +21,19 @@ namespace test
     {
         const std::vector<int> v = { 1, 2, 3, 4, 5 };
         assert(count(v) == 5);
+    }
+
+    void tes_case_2_extra()
+    {
+        const std::vector<int> v {};
+        try
+        {
+            count(v);
+        }
+        catch (const char* e)
+        {
+            assert(strcmp(e, "n should not < 1") == 0);
+        }
     }
 
     void test_case_3()
@@ -114,38 +128,77 @@ namespace test
 
 }
 
+namespace test_1_3
+{
+    void test_abc_exception()
+    {
 
+        try
+        {
+            constexpr int a = 0;
+            constexpr int b = 0;
+            constexpr int c = 0;
+            abc(a, b, c);
+        }
+        catch (int e)
+        {
+            if (e == 0)
+            {
+                std::cerr << "There is some parameter less than 0." << '\n';
+                std::cerr << "Test case 0 as Excepted: Exception 0 thrown." << '\n';
+            }
+
+            if (e == 1)
+            {
+                std::cerr << "All parameters are less than 0." << '\n';
+                std::cerr << "Test case 1 as Excepted: Exception 1 thrown." << '\n';
+            }
+
+            if (e == 2)
+            {
+                std::cerr << "All parameters are equal to 0." << '\n';
+                std::cout << "Test case 2 as Excepted: Exception 2 thrown." << '\n';
+            }
+
+        }
+    }
+}
 int main()
 {
-    test::test_case_1();
+    test_1_2::test_case_1();
     std::cout << "test case 1 passed!" << '\n';
     std::cout << "---------------------------" << '\n';
 
-    test::test_case_2();
+    test_1_2::test_case_2();
+    test_1_2::tes_case_2_extra();
     std::cout << "test case 2 passed!" << '\n';
 
     std::cout << "---------------------------" << '\n';
-    test::test_case_3();
+    test_1_2::test_case_3();
     std::cout << "test case 3 passed!" << '\n';
 
     std::cout << "---------------------------" << '\n';
-    test::test_case_4_int();
+    test_1_2::test_case_4_int();
     std::cout << "test case 4-int passed!" << '\n';
 
     std::cout << "---------------------------" << '\n';
-    test::test_case_4_float();
+    test_1_2::test_case_4_float();
     std::cout << "test case 4-float passed!" << '\n';
 
     std::cout << "---------------------------" << '\n';
-    test::test_iota_normal_case();
+    test_1_2::test_iota_normal_case();
     std::cout << "test iota normal case passed!" << '\n';
 
     std::cout << "---------------------------" << '\n';
-    test::test_iota_overflow_case();
+    test_1_2::test_iota_overflow_case();
 
     std::cout << "---------------------------" << '\n';
-    test::test_mismatch_normal_case();
+    test_1_2::test_mismatch_normal_case();
     std::cout << "All test mismatch case passed!" << '\n';
+
+    std::cout << "---------------------------" << '\n';
+    test_1_3::test_abc_exception();
+    std::cout << "All test abc exception case passed!" << '\n';
 
     return 0;
 }

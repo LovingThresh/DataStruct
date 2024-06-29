@@ -14,6 +14,8 @@ inline void swap(int& a, int& b) noexcept
 template <typename T>
 static size_t count(std::vector<T> a)
 {
+    if (a.empty())
+        throw "n should not < 1";  // NOLINT(hicpp-exception-baseclass)
     return a.size();
 }
 
@@ -84,9 +86,11 @@ size_t mismatch(const std::vector<T>& a, const std::vector<T>& b)
     {
         return std::min(a.size(), b.size());
     }
+
     else
     {
         return no_mismatch;
     }
 }
+
 
