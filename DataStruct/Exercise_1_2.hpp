@@ -1,9 +1,10 @@
 #pragma once
 #include <vector>
+#include <string>
 
 static constexpr size_t no_mismatch = std::string::npos;
 
-inline void swap(int & a, int & b) noexcept
+inline void swap(int& a, int& b) noexcept
 {
     const int temp = a;
     a = b;
@@ -15,14 +16,14 @@ template <typename T>
 static size_t count(std::vector<T> a)
 {
     if (a.empty())
-        throw "n should not < 1";  // NOLINT(hicpp-exception-baseclass)
+        throw "n should not < 1"; // NOLINT(hicpp-exception-baseclass)
     return a.size();
 }
 
 template <typename T>
-std::vector<T> & fill(std::vector<T> & a, const T & value)
+std::vector<T>& fill(std::vector<T>& a, const T& value)
 {
-    for (auto & element : a) // 使用范围for循环
+    for (auto& element : a) // 使用范围for循环
     {
         element = value;
     }
@@ -31,7 +32,7 @@ std::vector<T> & fill(std::vector<T> & a, const T & value)
 }
 
 template <typename Ta, typename Tb, typename Tr>
-Tr inner_product(const std::vector<Ta> & a, const std::vector<Tb> & b, Tr & result = 0)
+Tr inner_product(const std::vector<Ta>& a, const std::vector<Tb>& b, Tr& result = 0)
 {
     assert(a.size() == b.size());
     for (size_t i = 0; i < a.size(); ++i)
@@ -43,7 +44,7 @@ Tr inner_product(const std::vector<Ta> & a, const std::vector<Tb> & b, Tr & resu
 }
 
 template <typename T>
-std::vector<T> iota(std::vector<T> & a, const T value)
+std::vector<T> iota(std::vector<T>& a, const T value)
 {
     for (size_t element = 0; element < a.size(); ++element)
     {
@@ -58,7 +59,7 @@ std::vector<T> iota(std::vector<T> & a, const T value)
 }
 
 template <typename T>
-bool is_sorted(const std::vector<T> & a)
+bool is_sorted(const std::vector<T>& a)
 {
     for (size_t i = 0; i < a.size() - 1; ++i)
     {
@@ -71,7 +72,7 @@ bool is_sorted(const std::vector<T> & a)
 }
 
 template <typename T>
-size_t mismatch(const std::vector<T> & a, const std::vector<T> & b)
+size_t mismatch(const std::vector<T>& a, const std::vector<T>& b)
 {
     for (size_t i = 0; i < std::min(a.size(), b.size()); ++i)
     {
@@ -86,10 +87,5 @@ size_t mismatch(const std::vector<T> & a, const std::vector<T> & b)
         return std::min(a.size(), b.size());
     }
 
-    else
-    {
-        return no_mismatch;
-    }
+    return no_mismatch;
 }
-
-

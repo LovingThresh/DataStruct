@@ -20,10 +20,10 @@ public:
 
     void setValue(sign_type, unsigned long, unsigned int);
     void setValue(double);
-    sign_type getSign() const { return m_sign; }
-    unsigned long getDollars() const { return m_dollars; }
-    unsigned int getCents() const { return m_cents; }
-    currency add(const currency&) const;
+    [[nodiscard]] sign_type getSign() const { return m_sign; }
+    [[nodiscard]] unsigned long getDollars() const { return m_dollars; }
+    [[nodiscard]] unsigned int getCents() const { return m_cents; }
+    [[nodiscard]] currency add(const currency&) const;
     currency& increment(const currency&);
     void output() const;
 
