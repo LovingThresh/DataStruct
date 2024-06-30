@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include <stdexcept>
 
 inline int abc(const int a, const int b, const int c)
 {
