@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef EXERCISE_1_3_HPP
+#define EXERCISE_1_3_HPP
 
 inline int abc(const int a, const int b, const int c)
 {
@@ -20,3 +21,5 @@ inline int abc(const int a, const int b, const int c)
 
     return a + b + c;
 }
+
+#endif

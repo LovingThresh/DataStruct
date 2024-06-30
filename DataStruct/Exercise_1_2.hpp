@@ -1,8 +1,8 @@
-#pragma once
+#ifndef EXERCISE_1_2_HPP
+#define EXERCISE_1_2_HPP
+
 #include <vector>
 #include <string>
-
-static constexpr size_t no_mismatch = std::string::npos;
 
 inline void swap(int& a, int& b) noexcept
 {
@@ -87,5 +87,6 @@ size_t mismatch(const std::vector<T>& a, const std::vector<T>& b)
         return std::min(a.size(), b.size());
     }
 
-    return no_mismatch;
+    return std::string::npos;
 }
+#endif

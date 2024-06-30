@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef EXERCISE_1_4_HPP
+#define EXERCISE_1_4_HPP
 
 template <typename T>
 void print_array(T** x, const int rows, const int cols)
@@ -159,3 +160,5 @@ T** change_length_2d(T** & x, const int old_rows, const int old_columns, const i
     x = nullptr;
     return temp;
 }
+
+#endif

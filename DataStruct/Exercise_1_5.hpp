@@ -1,6 +1,6 @@
-﻿#pragma once
+﻿#ifndef EXERCISE_1_5_HPP
+#define EXERCISE_1_5_HPP
 #include <iostream>
-#include <__msvc_filebuf.hpp>
 
 enum sign_type
 {
@@ -54,3 +54,5 @@ public:
 private:
     std::string m_message;
 };
+
+#endif

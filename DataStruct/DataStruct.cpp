@@ -10,7 +10,7 @@ constexpr float epsilon = 1e-6f;
 
 namespace test_1_2
 {
-    void test_case_1()
+    static void test_case_1()
     {
         int a = 1;
         int b = 2;
@@ -19,13 +19,13 @@ namespace test_1_2
         assert(b == 1);
     }
 
-    void test_case_2()
+    static void test_case_2()
     {
         const std::vector<int> v = {1, 2, 3, 4, 5};
         assert(count(v) == 5);
     }
 
-    void tes_case_2_extra()
+    static void tes_case_2_extra()
     {
         const std::vector<int> v{};
         try
@@ -38,7 +38,7 @@ namespace test_1_2
         }
     }
 
-    void test_case_3()
+    static void test_case_3()
     {
         std::vector<int> v{1, 2, 3, 4, 5};
         constexpr int value = 0;
@@ -49,7 +49,7 @@ namespace test_1_2
         }
     }
 
-    void test_case_4_int()
+    static void test_case_4_int()
     {
         const std::vector<int> va{1, 2, 3, 4, 5};
         const std::vector<int> vb{1, 2, 3, 4, 5};
@@ -58,7 +58,7 @@ namespace test_1_2
         assert(result == 55);
     }
 
-    void test_case_4_float()
+    static void test_case_4_float()
     {
         const std::vector<float> va{1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
         const std::vector<float> vb{1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
@@ -67,7 +67,7 @@ namespace test_1_2
         assert(std::fabs(result - 66.55f) < epsilon);
     }
 
-    void test_iota_normal_case()
+    static void test_iota_normal_case()
     {
         // 准备测试数据
         std::vector<int> vec_normal(5); // 创建一个大小为5的向量
@@ -86,7 +86,7 @@ namespace test_1_2
         std::cout << "Test case 1 passed: Normal case." << '\n';
     }
 
-    void test_iota_overflow_case()
+    static void test_iota_overflow_case()
     {
         // 准备测试数据，这里使用uint8_t作为类型，容易达到其最大值导致溢出
         std::vector<uint8_t> vec_overflow(10); // 创建一个大小为10的向量
@@ -106,14 +106,14 @@ namespace test_1_2
         }
     }
 
-    void test_mismatch_normal_case()
+    static void test_mismatch_normal_case()
     {
         // equal
         std::vector<int> vec1{1, 2, 3, 4, 5};
         std::vector<int> vec2{1, 2, 3, 4, 5};
 
         const auto result1 = mismatch(vec1, vec2);
-        assert(result1 == no_mismatch);
+        assert(result1 == std::string::npos);
         std::cout << "Test case passed: equal case." << '\n';
 
         // subsequence
@@ -133,7 +133,7 @@ namespace test_1_2
 
 namespace test_1_3
 {
-    void test_abc_exception()
+    static void test_abc_exception()
     {
         try
         {
@@ -167,7 +167,7 @@ namespace test_1_3
 
 namespace test_1_4
 {
-    void test_make2_array_normal()
+    static void test_make2_array_normal()
     {
         try
         {
@@ -186,7 +186,7 @@ namespace test_1_4
         }
     }
 
-    void test_make2_array_case2()
+    static void test_make2_array_case2()
     {
         const int* y = new int [6]{1, 2, 3, 4, 5, 6};
         try
@@ -212,7 +212,7 @@ namespace test_1_4
         }
     }
 
-    void test_increase_length()
+    static void test_increase_length()
     {
         auto arr = new int[5]{1, 2, 3, 4, 5};
         const int* new_arr = change_length_1d(arr, 5, 8);
@@ -229,7 +229,7 @@ namespace test_1_4
         delete[] new_arr;
     }
 
-    void test_decrease_length()
+    static void test_decrease_length()
     {
         auto arr2 = new int[8]{1, 2, 3, 4, 5, 6, 7, 8};
         const int* new_arr2 = change_length_1d(arr2, 8, 5);
@@ -242,7 +242,7 @@ namespace test_1_4
         delete[] new_arr2;
     }
 
-    void test_same_length()
+    static void test_same_length()
     {
         auto arr3 = new int[5]{1, 2, 3, 4, 5};
         const int* new_arr3 = change_length_1d(arr3, 5, 5);
@@ -255,7 +255,7 @@ namespace test_1_4
         delete[] new_arr3;
     }
 
-    void test_length_to_zero()
+    static void test_length_to_zero()
     {
         auto arr4 = new int[3]{1, 2, 3};
         const int* new_arr4 = change_length_1d(arr4, 3, 0);
@@ -263,7 +263,7 @@ namespace test_1_4
         assert(arr4 == nullptr);
     }
 
-    void test_increase_2d_length()
+    static void test_increase_2d_length()
     {
         auto arr = new int*[1];
         arr[0] = new int[2]{1, 2};
@@ -303,7 +303,7 @@ namespace test_1_4
         delete[] new_arr;
     }
 
-    void test_decrease_2d_length()
+    static void test_decrease_2d_length()
     {
         auto arr = new int*[3];
         arr[0] = new int[3]{1, 2, 3};
@@ -331,7 +331,7 @@ namespace test_1_4
         delete[] new_arr;
     }
 
-    void test_same_2d_length()
+    static void test_same_2d_length()
     {
         auto arr = new int*[2];
         arr[0] = new int[2]{1, 2};
@@ -358,7 +358,7 @@ namespace test_1_4
         delete[] new_arr;
     }
 
-    void test_2d_length_to_zero()
+    static void test_2d_length_to_zero()
     {
         auto arr = new int*[2];
         arr[0] = new int[2]{1, 2};
@@ -376,7 +376,7 @@ namespace test_1_4
 
 namespace test_1_5
 {
-    void test_currency_class()
+    static void test_currency_class()
     {
         currency g, i;
         const currency h(plus, 3, 50);
