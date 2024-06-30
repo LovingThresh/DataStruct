@@ -104,6 +104,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,11 +130,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataStruct.cpp" />
+    <ClCompile Include="Exercise_1_5.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exercise_1_2.hpp" />
     <ClInclude Include="Exercise_1_3.hpp" />
     <ClInclude Include="Exercise_1_4.hpp" />
+    <ClInclude Include="Exercise_1_5.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,6 +4,7 @@
 #include "Exercise_1_2.hpp"
 #include "Exercise_1_3.hpp"
 #include "Exercise_1_4.hpp"
+#include "Exercise_1_5.hpp"
 
 constexpr float epsilon = 1e-6f;
 
@@ -187,7 +188,7 @@ namespace test_1_4
 
     void test_make2_array_case2()
     {
-        const int* y = new int [6]{1, 3, 3, 6, 5, 6};
+        const int* y = new int [6]{1, 2, 3, 4, 5, 6};
         try
         {
             int** x;
@@ -373,6 +374,55 @@ namespace test_1_4
     }
 }
 
+namespace test_1_5
+{
+    void test_currency_class()
+    {
+        currency g, i;
+        const currency h(plus, 3, 50);
+
+        // 使用两种形式的 setValue 来赋值
+        g.setValue(minus, 2, 25);
+        g.output();
+        std::cout << '\n';
+        i.setValue(123.4);
+        i.output();
+        std::cout << '\n';
+
+        // 调用成员函数 add 和 output
+        const currency j = g.add(h);
+
+        h.output();
+        std::cout << '+';
+        g.output();
+        std::cout << '=';
+        j.output();
+        std::cout << '\n';
+
+        // 连续调用 add 和 output
+        const currency k = g.add(h).add(i);
+        k.output();
+        std::cout << '\n';
+
+        // 调用成员函数 add 与 increase
+        const currency l = g.add(h).increment(j);
+        l.output();
+        std::cout << '\n';
+
+        // 测试异常
+        std::cout << "Attempting to initialize with cents = 152" << '\n';
+        try
+        {
+            g.setValue(plus, 3, 152);
+        }
+        catch (illegalParameterValue& e)
+        {
+            std::cout << "Caught thrown exception" << '\n';
+            e.output();
+        }
+    }
+}
+
 int main()
 {
     test_1_2::test_case_1();
@@ -452,6 +502,10 @@ int main()
     std::cout << "test 2d length to zero case passed!" << '\n';
 
     std::cout << "All test cases to change 2D length passed!" << '\n';
+
+    std::cout << "---------------------------" << '\n';
+    test_1_5::test_currency_class();
+    std::cout << "test currency class passed!" << '\n';
 
     return 0;
 }
