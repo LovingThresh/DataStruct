@@ -382,35 +382,24 @@ namespace test_1_5
     static void test_currency_class()
     {
         currency g, i;
-        const currency h(plus, 3, 50);
+        currency h(plus, 3, 50);
 
         // 使用两种形式的 setValue 来赋值
         g.setValue(minus, 2, 25);
-        g.output();
-        std::cout << '\n';
         i.setValue(123.4);
-        i.output();
-        std::cout << '\n';
 
         // 调用成员函数 add 和 output
-        const currency j = g.add(h);
+        const currency j = g + h;
 
-        h.output();
-        std::cout << '+';
-        g.output();
-        std::cout << '=';
-        j.output();
-        std::cout << '\n';
+        std::cout << h << '+' << g << '=' << j << '\n';
 
         // 连续调用 add 和 output
-        const currency k = g.add(h).add(i);
-        k.output();
-        std::cout << '\n';
+        const currency k = g + h + i;
+        std::cout << k << '\n';
 
         // 调用成员函数 add 与 increase
-        const currency l = g.add(h).increment(j);
-        l.output();
-        std::cout << '\n';
+        const currency l = g + h += j;
+        std::cout << l << '\n';
 
         // 测试异常
         std::cout << "Attempting to initialize with cents = 152" << '\n';

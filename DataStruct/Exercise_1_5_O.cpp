@@ -2,8 +2,7 @@
 #include "My_exception.hpp"
 
 #include <format>
-#include <iostream>
-
+#include <ostream>
 
 currency::currency(const sign_type sign, const unsigned long currency_value, const unsigned int currency_decimals)
 {
@@ -29,18 +28,18 @@ void currency::setValue(const double theAmount)
         m_amount = static_cast<long>((theAmount + 0.001) * 100);
 }
 
-currency currency::add(const currency& aCurrency) const
+currency currency::operator+(const currency& aCurrency) const
 {
     currency result;
     result.m_amount = m_amount + aCurrency.m_amount;
     return result;
 }
 
-void currency::output() const
+void currency::output(std::ostream& out) const
 {
     std::string sign = (getSign() == minus) ? "-" : "+";
     const std::string formatted = std::format("({}${}.{})", sign, getDollars(), getCents());
-    std::cout << formatted;
+    out << formatted;
 }
 
 sign_type currency::getSign() const
@@ -67,9 +66,14 @@ unsigned int currency::getCents() const
         return m_amount - getDollars() * 100;
 }
 
-currency& currency::increment(const currency& x)
+currency& currency::operator+=(const currency& x)
 {
     m_amount += x.m_amount;
     return *this;
 }
 
+std::ostream& operator<<(std::ostream& out, const currency& x)
+{
+    x.output(out);
+    return out;
+}

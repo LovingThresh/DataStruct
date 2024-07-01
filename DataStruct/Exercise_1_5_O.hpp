@@ -1,5 +1,6 @@
 ﻿#ifndef EXERCISE_1_5_O_HPP
 #define EXERCISE_1_5_O_HPP
+#include <ostream>
 
 enum sign_type
 {
@@ -24,9 +25,10 @@ public:
     [[nodiscard]] sign_type getSign() const;
     [[nodiscard]] unsigned long getDollars() const;
     [[nodiscard]] unsigned int getCents() const;
-    [[nodiscard]] currency add(const currency&) const;
-    currency& increment(const currency&);
-    void output() const;
+    [[nodiscard]] currency operator+(const currency&) const;
+    currency& operator+=(const currency&);
+    void output(std::ostream&) const;
+    friend std::ostream& operator<<(std::ostream&, const currency&);
 
 private:
     long m_amount;
