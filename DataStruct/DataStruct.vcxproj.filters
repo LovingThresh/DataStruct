@@ -18,6 +18,9 @@
     <ClCompile Include="DataStruct.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Exercise_1_5_O.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="Exercise_1_5.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -30,6 +33,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Exercise_1_4.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercise_1_5_O.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="My_exception.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Exercise_1_5.hpp">

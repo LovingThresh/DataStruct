@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>ClangCL</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -76,6 +76,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,12 +133,15 @@
   <ItemGroup>
     <ClCompile Include="DataStruct.cpp" />
     <ClCompile Include="Exercise_1_5.cpp" />
+    <ClCompile Include="Exercise_1_5_O.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exercise_1_2.hpp" />
     <ClInclude Include="Exercise_1_3.hpp" />
     <ClInclude Include="Exercise_1_4.hpp" />
     <ClInclude Include="Exercise_1_5.hpp" />
+    <ClInclude Include="Exercise_1_5_O.hpp" />
+    <ClInclude Include="My_exception.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
