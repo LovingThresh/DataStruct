@@ -38,7 +38,7 @@
     <ClInclude Include="Exercise_1_5_O.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="My_exception.hpp">
+    <ClInclude Include="My_definition.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Exercise_1_5.hpp">

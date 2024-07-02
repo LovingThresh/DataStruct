@@ -141,7 +141,7 @@
     <ClInclude Include="Exercise_1_4.hpp" />
     <ClInclude Include="Exercise_1_5.hpp" />
     <ClInclude Include="Exercise_1_5_O.hpp" />
-    <ClInclude Include="My_exception.hpp" />
+    <ClInclude Include="My_definition.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

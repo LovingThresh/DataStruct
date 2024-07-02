@@ -1,7 +1,7 @@
 ﻿#include <cassert>
 #include <iostream>
 #include <cstring>
-#include "My_exception.hpp"
+#include "My_definition.hpp"
 #include "Exercise_1_2.hpp"
 #include "Exercise_1_3.hpp"
 #include "Exercise_1_4.hpp"
@@ -381,16 +381,10 @@ namespace test_1_5
 {
     static void test_currency_class()
     {
-        currency g, i;
-        currency h(plus, 3, 50);
+        currency g(-2.25);
+        const currency h(3.5), i(123.4);
 
-        // 使用两种形式的 setValue 来赋值
-        g.setValue(minus, 2, 25);
-        i.setValue(123.4);
-
-        // 调用成员函数 add 和 output
         const currency j = g + h;
-
         std::cout << h << '+' << g << '=' << j << '\n';
 
         // 连续调用 add 和 output
@@ -405,13 +399,43 @@ namespace test_1_5
         std::cout << "Attempting to initialize with cents = 152" << '\n';
         try
         {
-            g.setValue(plus, 3, 152);
+            g = 3.152;
         }
         catch (illegalParameterValue& e)
         {
             std::cout << "Caught thrown exception" << '\n';
             e.output();
         }
+
+        // 测试最大值与最小值
+        const long minAmount = currency::getMinAmount();
+        const long maxAmount = currency::getMaxAmount();
+        std::cout << "Min amount: " << minAmount << '\n';
+        std::cout << "Max amount: " << maxAmount << '\n';
+        const currency m(static_cast<int>(minAmount)), n(static_cast<int>(maxAmount));
+        std::cout << "Min amount: " << m<< '\n';
+        std::cout << "Max amount: " << n << '\n';
+
+        // 测试cin
+        // std::cout << "Enter currency value (e.g., +123.45 or -123.45): ";
+        // currency m;
+        // std::cin >> m;
+        // std::cout << "You entered: " << m << '\n';
+
+        // 测试 + - * / == != percent 运算符
+        currency c1(100.00);
+        const currency c2(20.00), c3(80.00);
+        constexpr double x(4), y(20);
+        assert(c1 == (c2 + c3));
+        assert(c2 == (c1 - c3));
+        assert(c2 == c3 / x);
+        assert(c3 == c2 * x);
+        assert(c2 != c3);
+        assert(c2 == c1.percent(y));
+        std::cout << c1;
+        c1 += c2;
+        std::cout << '+' << c2 << '=' << c1 << '\n';
+        std::cout << "All test operator cases passed!" << '\n';
     }
 }
 
