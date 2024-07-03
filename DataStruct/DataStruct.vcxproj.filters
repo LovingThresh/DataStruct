@@ -24,6 +24,9 @@
     <ClCompile Include="Exercise_1_5.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Recurse.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exercise_1_2.hpp">

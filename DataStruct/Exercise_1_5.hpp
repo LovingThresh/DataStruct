@@ -35,7 +35,7 @@ namespace currency_space
         [[nodiscard]] currency& increment(const currency&);
         [[nodiscard]] currency& input(std::istream&);
         [[nodiscard]] explicit operator double() const;
-        [[nodiscard]] friend std::istream& operator>>(std::istream&, currency&);
+        friend std::istream& operator>>(std::istream&, currency&);
         void output() const;
 
     private:

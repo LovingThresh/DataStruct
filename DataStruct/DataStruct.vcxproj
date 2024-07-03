@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>ClangCL</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -134,6 +134,7 @@
     <ClCompile Include="DataStruct.cpp" />
     <ClCompile Include="Exercise_1_5.cpp" />
     <ClCompile Include="Exercise_1_5_O.cpp" />
+    <ClCompile Include="Recurse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exercise_1_2.hpp" />

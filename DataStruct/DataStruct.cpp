@@ -5,9 +5,9 @@
 #include "Exercise_1_2.hpp"
 #include "Exercise_1_3.hpp"
 #include "Exercise_1_4.hpp"
-
 // #include "Exercise_1_5.hpp"
 #include "Exercise_1_5_O.hpp"
+#include "Recurse.hpp"
 
 constexpr float epsilon = 1e-6f;
 
@@ -413,7 +413,7 @@ namespace test_1_5
         std::cout << "Min amount: " << minAmount << '\n';
         std::cout << "Max amount: " << maxAmount << '\n';
         const currency m(static_cast<int>(minAmount)), n(static_cast<int>(maxAmount));
-        std::cout << "Min amount: " << m<< '\n';
+        std::cout << "Min amount: " << m << '\n';
         std::cout << "Max amount: " << n << '\n';
 
         // 测试cin
@@ -439,89 +439,128 @@ namespace test_1_5
     }
 }
 
+namespace test_recurse
+{
+    void test_permutations()
+    {
+        char list[] = {'a', 'b', 'c', 'd'};
+        permutations(list, 0, 3);
+    }
+
+    void test_callatz()
+    {
+        constexpr unsigned int x = 7;
+        assert(callatz(x) == callatz_rec(x));
+        std::cout << "callatz(" << x << ") = " << callatz(x) << '\n';
+    }
+
+    void test_ackermann()
+    {
+        constexpr unsigned int i = 2, j = 2;
+        assert(ackermann_rec(1, 2) == 4);
+        assert(ackermann_rec(2, 1) == 4);
+        assert(ackermann_rec(2, 2) == 16);
+        std::cout << "ackermann(" << i << ", " << j << ") = " << ackermann_rec(i, j) << '\n';
+    }
+}
+
 int main()
 {
-    test_1_2::test_case_1();
-    std::cout << "test case 1 passed!" << '\n';
+    {
+        test_1_2::test_case_1();
+        std::cout << "test case 1 passed!" << '\n';
+        std::cout << "---------------------------" << '\n';
+
+        test_1_2::test_case_2();
+        test_1_2::tes_case_2_extra();
+        std::cout << "test case 2 passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_2::test_case_3();
+        std::cout << "test case 3 passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_2::test_case_4_int();
+        std::cout << "test case 4-int passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_2::test_case_4_float();
+        std::cout << "test case 4-float passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_2::test_iota_normal_case();
+        std::cout << "test iota normal case passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_2::test_iota_overflow_case();
+
+        std::cout << "---------------------------" << '\n';
+        test_1_2::test_mismatch_normal_case();
+        std::cout << "All test mismatch case passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_3::test_abc_exception();
+        std::cout << "All test abc exception case passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_make2_array_normal();
+        std::cout << "test make 2 array case 1 passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_make2_array_case2();
+        std::cout << "test make 2 array case 2 passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_increase_length();
+        std::cout << "test increase length case passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_decrease_length();
+        std::cout << "test decrease length case passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_same_length();
+        std::cout << "test same length case passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_length_to_zero();
+        std::cout << "test length to zero case passed!" << '\n';
+        std::cout << "All test cases to change 1D length passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_increase_2d_length();
+        std::cout << "test 2d increase length case passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_decrease_2d_length();
+        std::cout << "test decrease 2d length case passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_same_2d_length();
+        std::cout << "test same 2d length case passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_4::test_2d_length_to_zero();
+        std::cout << "test 2d length to zero case passed!" << '\n';
+
+        std::cout << "All test cases to change 2D length passed!" << '\n';
+
+        std::cout << "---------------------------" << '\n';
+        test_1_5::test_currency_class();
+        std::cout << "test currency class passed!" << '\n';
+    }
+
     std::cout << "---------------------------" << '\n';
-
-    test_1_2::test_case_2();
-    test_1_2::tes_case_2_extra();
-    std::cout << "test case 2 passed!" << '\n';
+    test_recurse::test_permutations();
+    std::cout << "test permutations function passed!" << '\n';
 
     std::cout << "---------------------------" << '\n';
-    test_1_2::test_case_3();
-    std::cout << "test case 3 passed!" << '\n';
+    test_recurse::test_callatz();
+    std::cout << "test callatz function passed!" << '\n';
 
     std::cout << "---------------------------" << '\n';
-    test_1_2::test_case_4_int();
-    std::cout << "test case 4-int passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_2::test_case_4_float();
-    std::cout << "test case 4-float passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_2::test_iota_normal_case();
-    std::cout << "test iota normal case passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_2::test_iota_overflow_case();
-
-    std::cout << "---------------------------" << '\n';
-    test_1_2::test_mismatch_normal_case();
-    std::cout << "All test mismatch case passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_3::test_abc_exception();
-    std::cout << "All test abc exception case passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_make2_array_normal();
-    std::cout << "test make 2 array case 1 passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_make2_array_case2();
-    std::cout << "test make 2 array case 2 passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_increase_length();
-    std::cout << "test increase length case passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_decrease_length();
-    std::cout << "test decrease length case passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_same_length();
-    std::cout << "test same length case passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_length_to_zero();
-    std::cout << "test length to zero case passed!" << '\n';
-    std::cout << "All test cases to change 1D length passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_increase_2d_length();
-    std::cout << "test 2d increase length case passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_decrease_2d_length();
-    std::cout << "test decrease 2d length case passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_same_2d_length();
-    std::cout << "test same 2d length case passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_4::test_2d_length_to_zero();
-    std::cout << "test 2d length to zero case passed!" << '\n';
-
-    std::cout << "All test cases to change 2D length passed!" << '\n';
-
-    std::cout << "---------------------------" << '\n';
-    test_1_5::test_currency_class();
-    std::cout << "test currency class passed!" << '\n';
+    test_recurse::test_ackermann();
+    std::cout << "test ackermann function passed!" << '\n';
 
     return 0;
 }
