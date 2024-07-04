@@ -45,6 +45,14 @@ inline unsigned int factorial(const unsigned int x)
     return result;
 }
 
+// ReSharper disable once CppInconsistentNaming
+unsigned int euclidGCD_rec(const unsigned int x, const unsigned int y)
+{
+    if (y == 0)
+        return x;
+    return euclidGCD_rec(y, x % y);
+}
+
 unsigned int callatz_rec(const unsigned int x)
 {
     if (x % 2 == 0)

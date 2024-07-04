@@ -462,6 +462,28 @@ namespace test_recurse
         assert(ackermann_rec(2, 2) == 16);
         std::cout << "ackermann(" << i << ", " << j << ") = " << ackermann_rec(i, j) << '\n';
     }
+
+    // ReSharper disable once CppInconsistentNaming
+    void test_euclidGCD_rec()
+    {
+        unsigned int x = 20, y = 30;
+        assert(euclidGCD_rec(x, y) == 10);
+        std::cout << "euclidGCD(" << x << ", " << y << ") = " << euclidGCD_rec(x, y) << '\n';
+        x = 112; y = 42;
+        std::cout << "euclidGCD(" << x << ", " << y << ") = " << euclidGCD_rec(x, y) << '\n';
+        
+    }
+
+    void test_subset_generation()
+    {
+        const std::string set = "abc";
+        std::vector<std::string> subsets;
+        subset_generation(set, subsets);
+        for (const auto& subset : subsets)
+        {
+            std::cout << subset << '\n';
+        }
+    }
 }
 
 int main()
@@ -561,6 +583,14 @@ int main()
     std::cout << "---------------------------" << '\n';
     test_recurse::test_ackermann();
     std::cout << "test ackermann function passed!" << '\n';
+
+    std::cout << "---------------------------" << '\n';
+    test_recurse::test_euclidGCD_rec();
+    std::cout << "test euclidGCD function passed!" << '\n';
+
+    std::cout << "---------------------------" << '\n';
+    test_recurse::test_subset_generation();
+    std::cout << "test subset_generation function passed!" << '\n';
 
     return 0;
 }
