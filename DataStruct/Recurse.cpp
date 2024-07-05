@@ -37,11 +37,10 @@ inline unsigned int fibonacci(const unsigned int x)
 
 inline unsigned int factorial(const unsigned int x)
 {
-    if (x <= 1)
-        return 1;
     unsigned int result = 1;
-    for (unsigned int i = 2; i <= x; i++)
+    for (unsigned int i = 1; i <= x; ++i) {
         result *= i;
+    }
     return result;
 }
 
