@@ -478,11 +478,24 @@ namespace test_recurse
     {
         const std::string set = "abc";
         std::vector<std::string> subsets;
-        subset_generation(set, subsets);
+        subsetGeneration(set, subsets);
         for (const auto& subset : subsets)
         {
             std::cout << subset << '\n';
         }
+    }
+
+    void test_gray_code()
+    {
+        constexpr unsigned int n = 3;
+        std::vector<unsigned int> sequence;
+        generateSequence(n, sequence);
+
+        std::cout << "生成的序列: ";
+        for (const unsigned int num : sequence) {
+            std::cout << num << " ";
+        }
+        std::cout << '\n';
     }
 }
 
@@ -590,7 +603,11 @@ int main()
 
     std::cout << "---------------------------" << '\n';
     test_recurse::test_subset_generation();
-    std::cout << "test subset_generation function passed!" << '\n';
+    std::cout << "test subsetGeneration function passed!" << '\n';
+
+    std::cout << "---------------------------" << '\n';
+    test_recurse::test_gray_code();
+    std::cout << "test gray code function passed!" << '\n';
 
     return 0;
 }

@@ -45,7 +45,7 @@ void permutations(T list[], const int k, const int m)
 }
 
 template <typename T>
-bool is_in(T list[], const T x, const int n)
+bool isIn(T list[], const T x, const int n)
 {
     if (n <= 0)
         return false;
@@ -54,7 +54,7 @@ bool is_in(T list[], const T x, const int n)
     return is_in(list, x, n - 1);
 }
 
-inline void subset_generation(const std::string& set, std::vector<std::string>& subsets,
+inline void subsetGeneration(const std::string& set, std::vector<std::string>& subsets,
                               const std::string& current = "", const size_t index = 0)
 {
     if (index == set.length())
@@ -64,10 +64,21 @@ inline void subset_generation(const std::string& set, std::vector<std::string>& 
     }
 
     // 不包括当前元素
-    subset_generation(set, subsets, current + "0", index + 1);
+    subsetGeneration(set, subsets, current + "0", index + 1);
 
     // 包括当前元素
-    subset_generation(set, subsets, current + "1", index + 1);
+    subsetGeneration(set, subsets, current + "1", index + 1);
+}
+
+inline void generateSequence(const unsigned int n, std::vector<unsigned int>& seq) {
+    if (n == 1) {
+        seq.push_back(1);
+    }
+    else {
+        generateSequence(n - 1, seq);
+        seq.push_back(n);
+        generateSequence(n - 1, seq);
+    }
 }
 
 #endif
