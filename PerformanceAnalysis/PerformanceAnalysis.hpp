@@ -118,10 +118,11 @@ void bubbleSort(T a[], const int n)
 template <typename T>
 void insert(T a[], const int n, const T& x)
 {
-    for (int i = n - 1; i >= 0 && x < a[i]; i--)
-    {
-        a[i + 1] = a[i];
+    int i;
+    for (i = n - 1; i >= 0 && x < a[i]; i--) {
+        a[i + 1] = a[i];  // 向后移动元素
     }
+    a[i + 1] = x;  // 插入元素 x
 }
 
 // program 2-11
@@ -193,10 +194,9 @@ void insertR(T a[], const int n, const T& x)
 template <typename T>
 void insertionSort(T a[], const int n)
 {
-    for (int i = 1; i < n; i++)
-    {
+    for (int i = 1; i < n; i++) {
         T t = a[i];
-        insert(a, i, t);
+        insert(a, i, t);  // 插入元素 a[i]
     }
 }
 
