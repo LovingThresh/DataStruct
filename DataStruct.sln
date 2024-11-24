@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinearList", "LinearList\Li
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList", "LinkedList\LinkedList.vcxproj", "{3E516821-9002-4EEB-B50F-06A89FAB76D7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AddressSanitizer", "AddressSanitizer\AddressSanitizer.vcxproj", "{8769ACFE-B70D-495F-A2A5-F746DAFD49BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,10 @@ Global
 		{3E516821-9002-4EEB-B50F-06A89FAB76D7}.Debug|x64.Build.0 = Debug|x64
 		{3E516821-9002-4EEB-B50F-06A89FAB76D7}.Release|x64.ActiveCfg = Release|x64
 		{3E516821-9002-4EEB-B50F-06A89FAB76D7}.Release|x64.Build.0 = Release|x64
+		{8769ACFE-B70D-495F-A2A5-F746DAFD49BA}.Debug|x64.ActiveCfg = Debug|x64
+		{8769ACFE-B70D-495F-A2A5-F746DAFD49BA}.Debug|x64.Build.0 = Debug|x64
+		{8769ACFE-B70D-495F-A2A5-F746DAFD49BA}.Release|x64.ActiveCfg = Release|x64
+		{8769ACFE-B70D-495F-A2A5-F746DAFD49BA}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

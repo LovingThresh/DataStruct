@@ -1,6 +1,7 @@
 ﻿#include <cassert>
 #include <iostream>
 #include <cstring>
+#include <print>
 #include "My_definition.hpp"
 #include "Exercise_1_2.hpp"
 #include "Exercise_1_3.hpp"
@@ -10,7 +11,7 @@
 #include "Recurse.hpp"
 
 constexpr float epsilon = 1e-6f;
-
+int x[100];
 namespace test_1_2
 {
     static void test_case_1()
@@ -608,6 +609,6 @@ int main()
     std::cout << "---------------------------" << '\n';
     test_recurse::test_gray_code();
     std::cout << "test gray code function passed!" << '\n';
-
+    x[100] = 5; // Boom!
     return 0;
 }
