@@ -21,7 +21,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AddressSanitizer", "Address
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PDFiumExample", "PDFiumExample\PDFiumExample.vcxproj", "{42136F79-09BC-480A-BCFC-9F2E56A2BC0E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorld", "HelloWorld\HelloWorld.vcxproj", "{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Library", "Library\Library.vcxproj", "{44C95ABE-18B8-451C-8AB1-3E3F8B7FF92A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Library-Test", "Library-Test\Library-Test.vcxproj", "{8F65B47A-7DD2-4EE9-B3C6-EC8F54FB1395}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Execution", "Execution\Execution.vcxproj", "{8212BF75-12D8-418B-8D9D-46158690F457}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadPool", "ThreadPool\ThreadPool.vcxproj", "{A14F91AC-66BC-4451-80C7-101BDA23A3F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +71,22 @@ Global
 		{42136F79-09BC-480A-BCFC-9F2E56A2BC0E}.Debug|x64.Build.0 = Debug|x64
 		{42136F79-09BC-480A-BCFC-9F2E56A2BC0E}.Release|x64.ActiveCfg = Release|x64
 		{42136F79-09BC-480A-BCFC-9F2E56A2BC0E}.Release|x64.Build.0 = Release|x64
-		{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}.Debug|x64.ActiveCfg = Debug|x64
-		{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}.Debug|x64.Build.0 = Debug|x64
-		{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}.Release|x64.ActiveCfg = Release|x64
-		{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}.Release|x64.Build.0 = Release|x64
+		{44C95ABE-18B8-451C-8AB1-3E3F8B7FF92A}.Debug|x64.ActiveCfg = Debug|x64
+		{44C95ABE-18B8-451C-8AB1-3E3F8B7FF92A}.Debug|x64.Build.0 = Debug|x64
+		{44C95ABE-18B8-451C-8AB1-3E3F8B7FF92A}.Release|x64.ActiveCfg = Release|x64
+		{44C95ABE-18B8-451C-8AB1-3E3F8B7FF92A}.Release|x64.Build.0 = Release|x64
+		{8F65B47A-7DD2-4EE9-B3C6-EC8F54FB1395}.Debug|x64.ActiveCfg = Debug|x64
+		{8F65B47A-7DD2-4EE9-B3C6-EC8F54FB1395}.Debug|x64.Build.0 = Debug|x64
+		{8F65B47A-7DD2-4EE9-B3C6-EC8F54FB1395}.Release|x64.ActiveCfg = Release|x64
+		{8F65B47A-7DD2-4EE9-B3C6-EC8F54FB1395}.Release|x64.Build.0 = Release|x64
+		{8212BF75-12D8-418B-8D9D-46158690F457}.Debug|x64.ActiveCfg = Debug|x64
+		{8212BF75-12D8-418B-8D9D-46158690F457}.Debug|x64.Build.0 = Debug|x64
+		{8212BF75-12D8-418B-8D9D-46158690F457}.Release|x64.ActiveCfg = Release|x64
+		{8212BF75-12D8-418B-8D9D-46158690F457}.Release|x64.Build.0 = Release|x64
+		{A14F91AC-66BC-4451-80C7-101BDA23A3F7}.Debug|x64.ActiveCfg = Debug|x64
+		{A14F91AC-66BC-4451-80C7-101BDA23A3F7}.Debug|x64.Build.0 = Debug|x64
+		{A14F91AC-66BC-4451-80C7-101BDA23A3F7}.Release|x64.ActiveCfg = Release|x64
+		{A14F91AC-66BC-4451-80C7-101BDA23A3F7}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

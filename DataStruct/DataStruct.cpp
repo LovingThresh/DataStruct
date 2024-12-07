@@ -9,7 +9,6 @@
 // #include "Exercise_1_5.hpp"
 #include "Exercise_1_5_O.hpp"
 #include "Recurse.hpp"
-#include <fmt/core.h>
 
 constexpr float epsilon = 1e-6f;
 namespace test_1_2

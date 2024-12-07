@@ -1,9 +1,7 @@
 #pragma once
 #include <sstream>
 
-#include "iterator.h"
-#include "iterator.h"
-
+#include "iterator.hpp"
 #include "../LinearList/LinearList.hpp"
 
 template<typename T>
