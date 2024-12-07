@@ -9,9 +9,9 @@
 // #include "Exercise_1_5.hpp"
 #include "Exercise_1_5_O.hpp"
 #include "Recurse.hpp"
+#include <fmt/core.h>
 
 constexpr float epsilon = 1e-6f;
-int x[100];
 namespace test_1_2
 {
     static void test_case_1()
@@ -609,6 +609,5 @@ int main()
     std::cout << "---------------------------" << '\n';
     test_recurse::test_gray_code();
     std::cout << "test gray code function passed!" << '\n';
-    x[100] = 5; // Boom!
     return 0;
 }

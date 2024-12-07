@@ -19,6 +19,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList", "LinkedList\Li
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AddressSanitizer", "AddressSanitizer\AddressSanitizer.vcxproj", "{8769ACFE-B70D-495F-A2A5-F746DAFD49BA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PDFiumExample", "PDFiumExample\PDFiumExample.vcxproj", "{42136F79-09BC-480A-BCFC-9F2E56A2BC0E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorld", "HelloWorld\HelloWorld.vcxproj", "{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -57,6 +61,14 @@ Global
 		{8769ACFE-B70D-495F-A2A5-F746DAFD49BA}.Debug|x64.Build.0 = Debug|x64
 		{8769ACFE-B70D-495F-A2A5-F746DAFD49BA}.Release|x64.ActiveCfg = Release|x64
 		{8769ACFE-B70D-495F-A2A5-F746DAFD49BA}.Release|x64.Build.0 = Release|x64
+		{42136F79-09BC-480A-BCFC-9F2E56A2BC0E}.Debug|x64.ActiveCfg = Debug|x64
+		{42136F79-09BC-480A-BCFC-9F2E56A2BC0E}.Debug|x64.Build.0 = Debug|x64
+		{42136F79-09BC-480A-BCFC-9F2E56A2BC0E}.Release|x64.ActiveCfg = Release|x64
+		{42136F79-09BC-480A-BCFC-9F2E56A2BC0E}.Release|x64.Build.0 = Release|x64
+		{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}.Debug|x64.ActiveCfg = Debug|x64
+		{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}.Debug|x64.Build.0 = Debug|x64
+		{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}.Release|x64.ActiveCfg = Release|x64
+		{CC394E7A-B3F6-4D3F-8FE5-CD83373966DE}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
